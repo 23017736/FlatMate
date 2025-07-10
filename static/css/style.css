@@ -264,3 +264,11 @@ form h2 {
     background-color: #d9bfa4;
     border-radius: 5px;
 }
+
+<style>
+  #chatbot-box {
+    border: 2px dashed red;
+    height: 500px;
+    background: #f9f9f9;
+  }
+</style>

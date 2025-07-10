@@ -1,64 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FlatMate - Real Estate App</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+{% extends 'base.html' %}
 
-<body>
-  <header>
-    <div class="navbar">
-      <div class="logo-area">
-        <img src="images/logo.png" alt="logo" class="logo-placeholder">
-        <span class="company-name">FlatMate</span>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li class="dropdown">
-            <a href="#">More ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="hot-properties.html">Hot Properties</a></li>
-              <li><a href="top-agents.html">Top Agents</a></li>
-              <li><a href="contact.html">Contact Agent</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Sign Up</a></li>
-          <li><a href="#">My Likes</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+{% block title %}Home - FlatMate{% endblock %}
 
-  <main>
-    <h1>Welcome to FlatMate!</h1>
+{% block content %}
+<div class="container">
+  <h1>Welcome to FlatMate!</h1>
 
-    <div id="chatbot-box"></div>
-  </main>
+  <!-- ✅ This is the container where the chatbot will be rendered -->
+  <div id="chatbot-box"></div>
+</div>
+{% endblock %}
 
-  <footer>
-    <p>&copy; 2025 FlatMate. All rights reserved.</p>
-  </footer>
+{% block scripts %}
+<!-- Load the real Flowise embed script -->
+<script src="{{ url_for('static', filename='js/flowise-web.js') }}"></script>
 
-  <!-- Flowise Chatbot Embed -->
-  <script src="https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"></script>
-  <script>
-    window.onload = function () {
-      window.flowise = {
-        chatflowid: "72ffd5c6-a727-432d-94b4-28c408af64e4",  // replace this with your real ID
-        apiHost: "https://m111vi-flowise.hf.space",  // must be public
-        chatflowConfig: {
-          chatboxContainerId: "chatbot-box",
-          theme: "light",
-          chatHeight: "500px",
-        }
-      };
-      flowise.init();
+<script>
+  window.onload = function () {
+    window.flowise = {
+      chatflowid: "72ffd5c6-a727-432d-94b4-28c408af64e4",
+      apiHost: "https://m111vi-flowise.hf.space",
+      chatflowConfig: {
+        chatboxContainerId: "chatbot-box",
+        theme: "light",
+        chatHeight: "500px"
+      }
     };
-  </script>
-</body>
-</html>
+
+    // ✅ This is what actually renders the chatbot
+    const interval = setInterval(() => {
+      if (typeof initFlowiseChatbot === 'function') {
+        initFlowiseChatbot();
+        clearInterval(interval);
+      }
+    }, 100);
+  };
+</script>
+{% endblock %}
+
+
