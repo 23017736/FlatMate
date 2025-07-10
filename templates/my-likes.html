@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}My Liked Properties{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>My Liked Properties</h1>
+
+    {% if liked %}
+        {% for prop in liked.values() %}
+            <div class="property">
+                <img src="{{ url_for('static', filename='images/' + prop.img) }}" alt="{{ prop.title }}">
+                <h2>{{ prop.title }}</h2>
+                <p>{{ prop.desc }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>You haven’t liked any properties yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

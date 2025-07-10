@@ -1,0 +1,266 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f5f5dc; /* Beige background */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #5b3a29; /* Darker beige for headings */
+}
+
+header {
+    background-color: #e8d3b9; /* light brown */
+    border-radius: 20px;
+    margin: 24px auto 32px auto;
+    padding: 0;
+    box-shadow: 0 4px 12px rgba(120, 90, 50, 0.10);
+    max-width: 1100px;
+    width: 95%;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-area img, .logo-area .logo-placeholder {
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    background: #d1b89b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #7c5b3e;
+    font-size: 1.5rem;
+}
+
+.company-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #7c5b3e;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;         /* <-- make it a horizontal flexbox */
+    flex-direction: row;   /* <-- explicitly set direction to horizontal */
+    justify-content: center;
+    align-items: center;
+    gap: 15px;             /* spacing between nav buttons */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    background-color: #7c5b3e; /* dark brown */
+    color: #fff;
+    padding: 10px 26px;
+    border-radius: 18px;
+    font-weight: bold;
+    font-size: 1.08rem;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 8px rgba(120, 90, 50, 0.07);
+    border: none;
+    outline: none;
+    display: inline-block;
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    background-color: #5f412d;
+    color: #fff;
+}
+
+main {
+    padding: 30px;
+    text-align: center;
+}
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#chatbot-box {
+    background-color: #e8d8b0; /* Lighter beige for chatbot */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #d1b89b; /* Soft beige for buttons */
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #c19a7a; /* Darker beige on hover */
+}
+
+.property, .agent {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #fff; /* White background for cards */
+}
+
+.property img, .agent img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.bio {
+    font-size: 14px;
+    color: #7a5c4e; /* Soft brown for bios */
+}
+
+footer {
+    text-align: center;
+    color: #7c5b3e;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+/* Form container styling */
+form {
+    background-color: #fff8ec;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Form inputs and selects */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #d1b89b;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #fdfaf5;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Matching submit button with navbar style */
+button,
+input[type="submit"],
+.large-button {
+    background-color: #7c5b3e; /* Same dark brown as navbar */
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+}
+
+button:hover,
+input[type="submit"]:hover,
+.large-button:hover {
+    background-color: #5f412d;
+}
+
+/* Center form titles */
+form h2 {
+    text-align: center;
+    color: #5b3a29;
+    margin-bottom: 20px;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* Hide dropdown menu by default */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #e8d3b9;
+    border-radius: 10px;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown menu items */
+.dropdown-menu li {
+    display: block;
+    margin: 0;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #7c5b3e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #d9bfa4;
+    border-radius: 5px;
+}

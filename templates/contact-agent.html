@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Agent{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Contact an Agent</h2>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Your Name" required><br><br>
+        <input type="email" name="email" placeholder="Your Email" required><br><br>
+        <select name="agent" required>
+            <option value="">Select Agent</option>
+            <option value="Agent 1">Chase</option>
+            <option value="Agent 2">Emily</option>
+            <option value="Agent 3">Erica</option>
+        </select><br><br>
+        <textarea name="message" placeholder="Your Message" rows="4" required></textarea><br><br>
+        <button type="submit" class="large-button">Send Message</button>
+    </form>
+</div>
+{% endblock %}

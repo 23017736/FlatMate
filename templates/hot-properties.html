@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Hot Properties{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Featured Hot Properties</h1>
+    <div class="property">
+        <img src="{{ url_for('static', filename='images/house1.jpg') }}" alt="House 1">
+        <h2>Block 123, Punggol Drive</h2>
+        <p>This lovely home features 4 bedrooms, a spacious backyard, and is located nearby MRT stations and malls.</p>
+        <a href="{{ url_for('like_property', property_id='house1') }}" class="large-button">
+            {% if 'house1' in liked %}❤️{% else %}♡{% endif %} Like
+        </a>
+    </div>
+    <div class="property">
+        <img src="{{ url_for('static', filename='images/house2.jpg') }}" alt="House 2">
+        <h2>Block 72, Jurong West</h2>
+        <p>A stylish apartment in the west, nearby schools and open space.</p>
+        <a href="{{ url_for('like_property', property_id='house1') }}" class="large-button">
+            {% if 'house1' in liked %}❤️{% else %}♡{% endif %} Like
+        </a>
+    </div>
+    <div class="property">
+        <img src="{{ url_for('static', filename='images/house3.jpg') }}" alt="House 3">
+        <h2>Blk 792, Dawson Road</h2>
+        <p>This quaint cottage offers a cozy retreat with beautiful garden rooftop and a peaceful atmosphere.</p>
+        <a href="{{ url_for('like_property', property_id='house1') }}" class="large-button">
+            {% if 'house1' in liked %}❤️{% else %}♡{% endif %} Like 
+        </a>
+    </div>
+</div>
+{% endblock %}

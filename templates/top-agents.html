@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Top Agents{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Top Real Estate Agents</h1>
+    <div class="agent-card">
+        <img src="{{ url_for('static', filename='images/agent1.jpg') }}" alt="Agent 1">
+        <h2>Chase</h2>
+        <p>Chase has over 10 years of experience in the real estate market and specializes in residential properties.</p>
+    </div>
+    <div class="agent-card">
+        <img src="{{ url_for('static', filename='images/agent2.jpg') }}" alt="Agent 2">
+        <h2>Emily</h2>
+        <p>Emily is known for their exceptional customer service and has a deep understanding of the local market.</p>
+    </div>
+    <div class="agent-card">
+        <img src="{{ url_for('static', filename='images/agent3.jpg') }}" alt="Agent 3">
+        <h2>Erica</h2>
+        <p>Erica has a proven track record of successful transactions and is dedicated to helping clients find their dream homes.</p>
+    </div>
+</div>
+{% endblock %}
