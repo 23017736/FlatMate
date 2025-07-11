@@ -35,34 +35,7 @@
                         <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
                     {% endif %}
                 </ul>
-            </nav>
-
-            <!-- Hamburger icon -->
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-
-        <!-- Nav menu -->
-        <nav id="nav-menu">
-            <ul>
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li class="dropdown">
-                <a href="#">More ▾</a>
-                <ul class="dropdown-menu">
-                <li><a href="{{ url_for('hot_properties') }}">Hot Properties</a></li>
-                <li><a href="{{ url_for('top_agents') }}">Top Agents</a></li>
-                <li><a href="{{ url_for('contact_agent') }}">Contact Agent</a></li>
-                </ul>
-            </li>
-            {% if session.get('user') %}
-                <li><a href="{{ url_for('my_likes') }}">My Likes</a></li>
-                <li><a href="{{ url_for('logout') }}">Logout</a></li>
-            {% else %}
-                <li><a href="{{ url_for('login') }}">Login</a></li>
-                <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
-            {% endif %}
-            </ul>
-        </nav>
-        </div>
-
+            </nav>  
         </div>
     </header>
 
