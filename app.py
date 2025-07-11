@@ -82,8 +82,8 @@ def contact_agent():
         agent = request.form['agent']
         # Here you'd usually send an email or store in a database
         flash(f'Message sent to {agent}!', 'success')
-        return redirect(url_for('index'))
-    return render_template('contact-agent.html')
+        return redirect(url_for('contact_agent'))
+    return render_template('contact-agent.html', show_modal=session.pop('show_modal', False))
 
 
 @app.route('/like-property/<property_id>')
