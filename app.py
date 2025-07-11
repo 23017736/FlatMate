@@ -22,7 +22,6 @@ users = load_users()
 def index():
     return render_template('index.html')
 
-users = {}
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -131,4 +130,4 @@ def my_likes():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))
