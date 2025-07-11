@@ -274,7 +274,7 @@ form h2 {
 </style>
 
 /* Mobile-first tweaks */
-.menu-toggle {
+/* .menu-toggle {
   display: none;
   font-size: 2rem;
   background: none;
@@ -318,4 +318,4 @@ form h2 {
     position: static;
     box-shadow: none;
   }
-}
+} */

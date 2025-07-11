@@ -4,14 +4,25 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 app = Flask(__name__)
 app.secret_key = 'shhhh_this_is_secret!'  # ✅ This line is required!
 
+def load_users():
+    try:
+        with open('users.json', 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+
+# Save users to a file
+def save_users(users):
+    with open('users.json', 'w') as f:
+        json.dump(users, f)
+
+users = load_users()
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-users = {
-    "admin": "password123"
-}
+users = {}
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -39,10 +50,10 @@ def signup():
             flash('Passwords do not match.', 'error')
         else:
             users[username] = password
-            session['user'] = username
-            flash('Sign-up successful! You are now logged in.', 'success')
-            return redirect(url_for('index'))
-
+            save_users(users)
+            flash('Account created! You can now log in.')
+            return redirect(url_for('login'))
+        
     return render_template('signup.html')
 
 @app.route('/logout')
