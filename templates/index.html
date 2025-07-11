@@ -6,36 +6,14 @@
 <div class="container">
   <h1>Welcome to FlatMate!</h1>
 
-  <!-- ✅ This is the container where the chatbot will be rendered -->
-  <div id="chatbot-box"></div>
+  <!-- ✅ Chatbot embed using iframe -->
+  <div id="chatbot-box">
+    <iframe
+      src="https://m111vi-flowise.hf.space/chatbot/72ffd5c6-a727-432d-94b4-28c408af64e4"
+      width="100%"
+      height="500px"
+      style="border: none; border-radius: 12px;">
+    </iframe>
+  </div>
 </div>
 {% endblock %}
-
-{% block scripts %}
-<!-- Load the real Flowise embed script -->
-<script src="{{ url_for('static', filename='js/flowise-web.js') }}"></script>
-
-<script>
-  window.onload = function () {
-    window.flowise = {
-      chatflowid: "72ffd5c6-a727-432d-94b4-28c408af64e4",
-      apiHost: "https://m111vi-flowise.hf.space",
-      chatflowConfig: {
-        chatboxContainerId: "chatbot-box",
-        theme: "light",
-        chatHeight: "500px"
-      }
-    };
-
-    // ✅ This is what actually renders the chatbot
-    const interval = setInterval(() => {
-      if (typeof initFlowiseChatbot === 'function') {
-        initFlowiseChatbot();
-        clearInterval(interval);
-      }
-    }, 100);
-  };
-</script>
-{% endblock %}
-
-
